@@ -7,9 +7,9 @@ The Bookstore Application is a simple Spring Boot application that manages produ
 - [Overview](#overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Endpoints](#endpoints)
 - [Build and Run](#build-and-run)
+- [Endpoints](#endpoints)
+- [Payload](#payload)
 - [Dependencies](#dependencies)
 
 ## Overview
@@ -31,14 +31,16 @@ The application consists of three main components:
 ## Getting Started
 To get started with the Bookstore Application, clone the repository:
 
-git clone https://github.com/your-username/bookstore-application.git
+git clone https://github.com/lokeshe21/bookstore.git
 
-## Usage
+## Build and Run
 Make sure you have Java 17 and Gradle installed. You can build and run the application using the provided Gradle wrapper:
 
 ./gradlew build
 
 ./gradlew bootRun
+
+Swagger link : Swagger-UI[](http://localhost:8080/bookstore/swagger-ui/index.html#/)
 
 ## Endpoints
 
@@ -54,12 +56,51 @@ PUT /api/products/{productId}/{type}: Apply discount or tax to a product.
 
 GET /api/products: Retrieve all products.
 
-## Build and Run
-Build the project using:
+## Payload
+POST /api/products: Create a new product.
+{
+"name": "Test Book",
+"description": "Fictional book",
+"price": 50,
+"quantityAvailable": 100
+}
 
-./gradlew build
+GET /api/products/{productId}: Retrieve a product by ID.
+productId: 1
 
-Run the application:
+PUT /api/products/{productId}: Update an existing product.
+productId: 1
+{
+"productId": 1,
+"name": "Test Book title change",
+"description": "Fictional book",
+"price": 50,
+"quantityAvailable": 100
+}
+
+DELETE /api/products/{productId}: Delete a product.
+productId: 1
+
+PUT /api/products/{productId}/{type}: Apply discount or tax to a product.
+{
+"productId": 1,
+"name": "Test Book title change",
+"description": "Fictional book",
+"price": 50,
+"quantityAvailable": 100
+}
+
+PUT /api/products/{productId}/{type}: Apply discount or tax to a product.
+For Tax:
+productId: 1
+type: tax
+percentageValue: 10
+
+For discount:
+productId: 1
+type: tax
+percentageValue: 10
+
 
 ./gradlew bootRun
 
