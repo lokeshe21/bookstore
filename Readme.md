@@ -40,7 +40,7 @@ Make sure you have Java 17 and Gradle installed. You can build and run the appli
 
 ./gradlew bootRun
 
-Swagger link : Swagger-UI[](http://localhost:8080/bookstore/swagger-ui/index.html#/)
+Swagger link : http://localhost:8080/bookstore/swagger-ui/index.html#/
 
 ## Endpoints
 
@@ -100,9 +100,6 @@ For discount:
 productId: 1
 type: tax
 percentageValue: 10
-
-
-./gradlew bootRun
 
 ## Dependencies
 - Spring Boot 3.2.2
